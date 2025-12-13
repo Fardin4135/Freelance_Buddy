@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import heroImage from '../assets/Hero.Png';
+import heroImage from '../assets/Hero.png';
 export default function Hero() {
 
   const container = {
