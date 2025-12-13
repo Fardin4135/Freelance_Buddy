@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+
+/* small custom styles */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* utility animation classes used in components */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(18px);} to { opacity:1; transform: translateY(0);} }
+@keyframes fadeInRight { from { opacity: 0; transform: translateX(24px);} to { opacity:1; transform: translateX(0);} }
+.animate-fade-in-up { animation: fadeInUp 700ms ease forwards; }
+.animate-fade-in-right { animation: fadeInRight 700ms ease forwards; }
+.delay-100 { animation-delay: 120ms; }
+.delay-200 { animation-delay: 240ms; }
+.delay-300 { animation-delay: 360ms; }
