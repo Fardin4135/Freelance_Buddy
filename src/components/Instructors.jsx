@@ -1,18 +1,20 @@
 import React from "react";
 import InstructorCard from "./InstructorCard";
-import instructorImage1 from "../assets/Instructor.png";
+import instructorImage1 from "../assets/Aarav.jpg";
+import instructorImage2 from "../assets/Riya.png";
+import instructorImage3 from "../assets/My_img.jpg";
 
 const TEACHERS = [
   {
     id: 1,
-    img: instructorImage1,
-    name: "Aarav Singh",
-    exp: "5 years",
+    img: instructorImage3,
+    name: "Fardin Alam",
+    exp: "1.5 years",
     bio: "Frontend specialist — React, Next.js, performance & accessibility.",
   },
   {
     id: 2,
-    img: instructorImage1,
+    img: instructorImage2,
     name: "Riya Sharma",
     exp: "4 years",
     bio: "Data scientist & ML engineer — Python, scikit-learn, model deployment.",
@@ -20,7 +22,7 @@ const TEACHERS = [
   {
     id: 3,
     img: instructorImage1,
-    name: "Karan Patel",
+    name: "Aarav Singh",
     exp: "6 years",
     bio: "Cloud & DevOps — AWS certified engineer, CI/CD, infra-as-code.",
   },

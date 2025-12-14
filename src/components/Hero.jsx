@@ -24,7 +24,7 @@ export default function Hero() {
     <section
       id="hero"
       className="relative flex items-center text-white overflow-hidden
-                 min-h-[80vh] sm:min-h-screen"
+                 md:min-h-[80vh] sm:min-h-screen"
     >
       {/* Background Image */}
       <div
