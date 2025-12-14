@@ -5,50 +5,73 @@ const COURSES = [
   {
     id: 1,
     title: "Frontend Development",
-    price: "₹6,999",
+    price: 6999,
     duration: "1 Month",
-    bullets: ["HTML, CSS, JavaScript", "Tailwind & Responsive UI", "React + Projects", "Portfolio & Interview Prep"]
+    bullets: [
+      "HTML, CSS, JavaScript",
+      "Tailwind & Responsive UI",
+      "React + Projects",
+      "Portfolio & Interview Prep",
+    ],
   },
   {
-    id: 2,
-    title: "Full Stack Web Development",
-    price: "₹24,999",
-    duration: "4 Months",
-    bullets: ["Node.js, Express, MongoDB", "REST & Authentication", "Deployment & CI/CD", "Real SaaS Project"]
+      id: 2,
+    title: "AI Tools & Generative AI",
+    price: 19999,
+    duration: "2 Months",
+    bullets: [
+      "ChatGPT, Gemini, Claude",
+      "Prompt Engineering",
+      "AI for Productivity & Coding",
+      "Real-world AI Use Cases",
+    ],
   },
   {
     id: 3,
     title: "DevOps & Cloud",
-    price: "₹22,999",
+    price: 22999,
     duration: "3 Months",
-    bullets: ["Docker, Kubernetes", "AWS Core Services", "CI/CD Pipelines", "Monitoring & Logging"]
+    bullets: [
+      "Docker & Kubernetes",
+      "AWS Core Services",
+      "CI/CD Pipelines",
+      "Monitoring & Logging",
+    ],
   },
   {
     id: 4,
     title: "Data Science & ML",
-    price: "₹29,999",
+    price: 29999,
     duration: "4 Months",
-    bullets: ["Python, Pandas, NumPy", "ML Algorithms", "Model Deployment", "Capstone Project"]
-  }
+    bullets: [
+      "Python, Pandas, NumPy",
+      "ML Algorithms",
+      "Model Deployment",
+      "Capstone Project",
+    ],
+  },
 ];
 
 export default function Courses() {
   return (
-    <section id="courses" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
-        <h2 className="text-3xl font-bold text-center mb-6">Courses & Pricing</h2>
-        <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10">
-          Carefully crafted paths with hands-on projects — pick the one that suits your goals.
+    <section id="courses" className="py-8 lmd:py-18 lg:py-24 bg-[#0B1220] text-white border-t">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          Courses & Pricing
+        </h2>
+
+        <p className="text-center text-gray-400 max-w-2xl mx-auto mb-14">
+          Carefully crafted, job-oriented programs with live projects and mentor support.
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {COURSES.map((c) => (
-            <CourseCard key={c.id} course={c} />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {COURSES.map((course, index) => (
+            <CourseCard key={course.id} course={course} index={index} />
           ))}
         </div>
 
-        <div className="mt-10 text-center text-sm text-gray-500">
-          <strong>Note:</strong> We also offer installment plans and corporate training. Contact for details.
+        <div className="mt-12 text-center text-sm text-gray-400">
+          <strong className="text-white">Note:</strong> EMI & corporate training available.
         </div>
       </div>
     </section>

@@ -10,7 +10,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <main className="pt-20">
+      <main className="">
         <Hero />
         <Courses />
         <Instructors />

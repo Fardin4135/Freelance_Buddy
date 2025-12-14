@@ -8,15 +8,15 @@ export default function Register() {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-    reset
+    reset,
   } = useForm({
     defaultValues: {
       name: "",
       email: "",
       course: "Frontend Development",
       phone: "",
-      message: ""
-    }
+      message: "",
+    },
   });
 
   const onSubmit = async (data) => {
@@ -26,7 +26,7 @@ export default function Register() {
       const res = await fetch("https://formspree.io/f/mkgdkrny", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       });
 
       if (res.ok) {
@@ -36,22 +36,28 @@ export default function Register() {
         setStatus("Error submitting form. Try again later.");
       }
     } catch (err) {
-      console.error(err);
       setStatus("Network error. Try again.");
     }
   };
 
   return (
-    <section id="register" className="py-20 bg-gray-50">
+    <section
+      id="register"
+      className="py-8 lmd:py-18 lg:py-24 bg-[#0B1220] text-white border-t"
+    >
       <div className="max-w-3xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-4">Register / Enquiry</h2>
-        <p className="text-center text-gray-600 mb-6">
+        <h2 className="text-3xl font-bold text-center mb-3">
+          Register / Enquiry
+        </h2>
+
+        <p className="text-center text-gray-400 mb-10">
           Fill the form and our team will reach out within 24 hours.
         </p>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="bg-white p-6 rounded-lg shadow space-y-4"
+          className="bg-white/5 backdrop-blur border border-white/10 
+                     rounded-2xl p-8 shadow-lg space-y-5"
         >
           {/* Name & Email */}
           <div className="grid md:grid-cols-2 gap-4">
@@ -61,11 +67,15 @@ export default function Register() {
                 placeholder="Full name"
                 {...register("name", {
                   required: "Name is required",
-                  minLength: { value: 3, message: "Name must be at least 3 characters" }
+                  minLength: { value: 3, message: "Name must be at least 3 characters" },
                 })}
-                className={`p-3 border rounded w-full ${errors.name ? "border-red-500" : ""}`}
+                className={`w-full p-3 rounded-lg bg-transparent border 
+                ${errors.name ? "border-red-500" : "border-white/20"} 
+                focus:outline-none focus:border-amber-400`}
               />
-              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+              {errors.name && (
+                <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
+              )}
             </div>
 
             <div>
@@ -76,12 +86,16 @@ export default function Register() {
                   required: "Email is required",
                   pattern: {
                     value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                    message: "Invalid email address"
-                  }
+                    message: "Invalid email address",
+                  },
                 })}
-                className={`p-3 border rounded w-full ${errors.email ? "border-red-500" : ""}`}
+                className={`w-full p-3 rounded-lg bg-transparent border 
+                ${errors.email ? "border-red-500" : "border-white/20"} 
+                focus:outline-none focus:border-amber-400`}
               />
-              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+              {errors.email && (
+                <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
+              )}
             </div>
           </div>
 
@@ -89,10 +103,12 @@ export default function Register() {
           <div className="grid md:grid-cols-2 gap-4">
             <select
               {...register("course")}
-              className="p-3 border rounded w-full"
+              className="w-full p-3 rounded-lg bg-[#0B1220] 
+                         border border-white/20 text-gray-300
+                         focus:outline-none focus:border-amber-400"
             >
               <option>Frontend Development</option>
-              <option>MERN Full Stack</option>
+              <option>AI Tools & Generative AI</option>
               <option>Python AI & ML</option>
               <option>Web Designing</option>
             </select>
@@ -104,34 +120,38 @@ export default function Register() {
                 {...register("phone", {
                   pattern: {
                     value: /^[6-9]\d{9}$/,
-                    message: "Invalid Indian phone number"
-                  }
+                    message: "Invalid Indian phone number",
+                  },
                 })}
-                className={`p-3 border rounded w-full ${errors.phone ? "border-red-500" : ""}`}
+                className={`w-full p-3 rounded-lg bg-transparent border 
+                ${errors.phone ? "border-red-500" : "border-white/20"} 
+                focus:outline-none focus:border-amber-400`}
               />
-              {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
+              {errors.phone && (
+                <p className="text-red-400 text-sm mt-1">{errors.phone.message}</p>
+              )}
             </div>
           </div>
 
           {/* Message */}
           <div>
             <textarea
-              placeholder="Message (optional)"
               rows="4"
-              {...register("message", {
-              
-              })}
-              className={`w-full p-3 border rounded ${errors.message ? "border-red-500" : ""}`}
+              placeholder="Message (optional)"
+              {...register("message")}
+              className="w-full p-3 rounded-lg bg-transparent border border-white/20
+                         focus:outline-none focus:border-amber-400"
             />
-            {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
           </div>
 
           {/* Submit & Status */}
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex flex-wrap items-center gap-4 pt-2">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-indigo-600 text-white px-6 py-3 rounded font-semibold hover:bg-indigo-700 disabled:opacity-50"
+              className="bg-amber-400 text-[#071021] px-8 py-3 rounded-lg 
+                         font-semibold hover:scale-105 transition
+                         disabled:opacity-60"
             >
               {isSubmitting ? "Submitting..." : "Submit"}
             </button>
@@ -139,7 +159,11 @@ export default function Register() {
             {status && (
               <p
                 className={`text-sm font-medium ${
-                  status.toLowerCase().includes("success") ? "text-green-600" : "text-red-600"
+                  status.toLowerCase().includes("success")
+                    ? "text-green-400"
+                    : status.toLowerCase().includes("sending")
+                    ? "text-amber-400"
+                    : "text-red-400"
                 }`}
               >
                 {status}
