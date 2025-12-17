@@ -18,7 +18,7 @@ const people = [
     ],
   },
   {
-    name: "Co-Founder Name",
+    name: "Shahid Raza",
     role: "Co-Founder & Tech Strategist",
     image: coFounderImage,
     bio: `B.Tech CSE (AI & ML) with 1.5+ years of experience in Software Engineering
