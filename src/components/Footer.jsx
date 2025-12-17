@@ -13,7 +13,7 @@ export default function Footer() {
         {/* Brand / About */}
         <div className="flex flex-col items-center md:items-start">
           <h3 className="text-xl font-bold text-white mb-3">
-            Tech Academy
+            freelanceBuddy
           </h3>
           <p className="text-sm leading-relaxed max-w-xs">
             Job-focused tech training with real-world projects, mentorship,
@@ -56,10 +56,10 @@ export default function Footer() {
             📍 Bokaro Co-operative Colony, Jharkhand
           </p>
           <p className="text-sm mb-2">
-            📧 info@techacademy.example
+            📧 fardin@0023789@gmail.com
           </p>
           <p className="text-sm">
-            📞 +91 00000 00000
+            📞 +91 8709739601
           </p>
         </div>
       </div>
@@ -78,7 +78,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="mt-12 border-t border-white/10 py-6 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} Tech Academy — Built by{" "}
+        © {new Date().getFullYear()} freelanceBuddy — Built by{" "}
         <span className="text-amber-400 font-medium">Fardin Alam</span>
       </div>
     </footer>

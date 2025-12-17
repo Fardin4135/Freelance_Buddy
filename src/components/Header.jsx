@@ -26,11 +26,11 @@ export default function Header() {
           {/* LOGO */}
           <div className="flex items-center gap-3 cursor-pointer">
             <div className="w-10 h-10 bg-amber-400 rounded-md flex items-center justify-center text-[#071021] font-bold">
-              YFB
+              FB
             </div>
             <div className="leading-tight">
               <div className="text-lg font-bold text-amber-400">
-                YourFreelanceBuddy
+               freelanceBuddy
               </div>
               <div className="text-xs text-gray-400">
                 Learn. Build. Launch.
